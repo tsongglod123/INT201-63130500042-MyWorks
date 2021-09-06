@@ -6,8 +6,16 @@ const reverseText = (text) => {
     return temp.join("");
 }
 
+let text = "Hello, World!"
+const getText = () => {
+    document.getElementById("text").innerHTML = text;
+}
+
+// 1: Reverse String 
+// 2: Replace Vowels with ‘*’ 
+// 3: Count Vowels in String
+
 const textString = (option) => {
-    let text = "Hello, World!"
     switch (option) {
         case 1:
             return reverseText(text);
@@ -19,10 +27,6 @@ const textString = (option) => {
             return "ERROR!";
     }
 }
-
-// 1: Reverse String 
-// 2: Replace Vowels with ‘*’ 
-// 3: Count Vowels in String
 
 const getInputValue = () => {
     let input = parseInt(document.getElementById("option").value);
