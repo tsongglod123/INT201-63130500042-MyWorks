@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./dmg_cal.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <h1 class="header">Axie: Damage calculator</h1>
+    <label>Axie ID</label>
+    <div class="searchbar">
+        <input name="id" id="id" type="number" min="1" class="textbox" placeholder="Axie ID">
+        <input onclick="getAxieById()" value="Search" type="submit" class="button">
+    </div>
+    <br clear="all">
+    <div class="center">
+        <img id="axie_img">
+    </div>
+    <div id="stats" class="stats">
+        <label>Stats: hp, speed, skill, and morale</label>
+        <div class="stat">
+            <div id="hp" class="hp score"></div>
+        </div>
+        <div class="stat">
+            <div id="speed" class="speed score"></div>
+        </div>
+        <div class="stat">
+            <div id="skill" class="skill score"></div>
+        </div>
+        <div class="stat">
+            <div id="morale" class="morale score"></div>
+        </div>
+    </div>
+    <table>
+        <td>
+            <div>
+                <p id="axie_skill_1"></p>
+            </div>
+        </td>
+        <td>
+            <div>
+                <p id="axie_skill_2"></p>
+            </div>
+        </td>
+        <td>
+            <div>
+                <p id="axie_skill_3"></p>
+            </div>
+        </td>
+        <td>
+            <div>
+                <p id="axie_skill_4"></p>
+            </div>
+        </td>
+    </table>
+    <pre id="axie_details"></pre>
+</body>
+
+</html>

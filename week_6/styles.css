@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+html {
+	font-size: 16px;
+	font-family: "Roboto", sans-serif;
+	color: #fff;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+label {
+	font-size: 14px;
+	margin-bottom: 5px;
+	display: block;
+	font-weight: 700;
+}
+
+h1.header {
+	font-size: 28px;
+}
+
+div.searchbar {
+	outline: 0;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+	border-radius: 4px;
+}
+
+div.searchbar > .textbox {
+	outline: 0;
+	height: 42px;
+	width: 200px;
+	line-height: 42px;
+	padding: 0 16px;
+	background-color: rgba(255, 255, 255, 0.8);
+	color: #212121;
+	border: 0;
+	float: left;
+	border-radius: 4px 0 0 4px;
+}
+
+div.searchbar > .textbox:focus {
+	outline: 0;
+	background-color: #fff;
+}
+
+div.searchbar > .button {
+	cursor: pointer;
+	outline: 0;
+	background: none;
+	background-color: rgb(0, 160, 144, 0.8);
+	float: left;
+	height: 42px;
+	width: 80px;
+	text-align: center;
+	line-height: 42px;
+	border: 0;
+	color: #fff;
+	text-rendering: auto;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	transition: background-color 0.4s ease;
+	border-radius: 0 4px 4px 0;
+}
+
+div.searchbar > .button:hover {
+	background-color: rgba(0, 160, 144);
+}
+
+div.center > img {
+    display: block;
+    margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+}
+
+div.stats {
+	display: none;
+	margin-left: auto;
+	margin-right: auto;
+	width: 305px;
+}
+
+div.stats div.stat {
+	margin: 5px 0px 5px 0px;
+	border-radius: 2px;
+	background-color: rgb(180, 180, 180);
+}
+
+div.stats div.stat > div {
+	height: 14px;
+	border-radius: 2px;
+	box-sizing: border-box;
+	border-right: 2px solid #fff;
+}
+
+.score {
+    font-weight: 700;
+    font-size: 10px;
+	text-align: right;
+	padding-right: 5px;
+    color: white;
+}
+
+div.stats div.stat div.hp {
+	background-color: #3ac279;
+}
+
+div.stats div.stat div.speed {
+	background-color: #f7ac0a;
+}
+
+div.stats div.stat div.skill {
+	background-color: #6a3ac2;
+}
+
+div.stats div.stat div.morale {
+	background-color: #c23a3a;
+}
