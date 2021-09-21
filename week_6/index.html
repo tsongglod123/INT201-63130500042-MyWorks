@@ -7,58 +7,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="./dmg_cal.js"></script>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/split.css">
+    <link rel="stylesheet" href="./css/cards.css">
+    <link rel="stylesheet" href="./css/stats.css">
 </head>
 
 <body>
-    <h1 class="header">Axie: Damage calculator</h1>
-    <label>Axie ID</label>
-    <div class="searchbar">
-        <input name="id" id="id" type="number" min="1" class="textbox" placeholder="Axie ID">
-        <input onclick="getAxieById()" value="Search" type="submit" class="button">
+    <div class="split left">
+        <div style="margin-left: 40px">
+            <h1 class="header">Axie: Damage calculator</h1>
+            <label>Axie ID</label>
+            <div class="searchbar">
+                <input name="id" id="id" type="number" min="1" class="textbox" placeholder="Axie ID">
+                <input onclick="getAxieById()" value="Search" type="submit" class="button">
+            </div>
+        </div>
+        <br clear="all">
+        <div class="center">
+            <img id="axie_img">
+        </div>
+        <div id="stats" class="stats">
+            <label>Stats: hp, speed, skill, and morale</label>
+            <div class="stat">
+                <div id="hp" class="hp score"></div>
+            </div>
+            <div class="stat">
+                <div id="speed" class="speed score"></div>
+            </div>
+            <div class="stat">
+                <div id="skill" class="skill score"></div>
+            </div>
+            <div class="stat">
+                <div id="morale" class="morale score"></div>
+            </div>
+        </div>
     </div>
-    <br clear="all">
-    <div class="center">
-        <img id="axie_img">
+
+    <div class="split right">
+        <div id="skills" class="skills">
+            <div class="container">
+                <span><img id="axie_skill_1"></span>
+                <div id="energy_1" class="energy"></div>
+                <div id="name_1" class="name"></div>
+                <div id="desc_1" class="desc"></div>
+                <div id="icon"><img id="eff_icon_1"></div>
+            </div>
+            <div class="container">
+                <span><img id="axie_skill_2"></span>
+                <div id="energy_2" class="energy"></div>
+                <div id="name_2" class="name"></div>
+                <div id="desc_2" class="desc"></div>
+                <div id="icon"><img id="eff_icon_2"></div>
+            </div>
+            <div class="container">
+                <span><img id="axie_skill_3"></span>
+                <div id="energy_3" class="energy"></div>
+                <div id="name_3" class="name"></div>
+                <div id="desc_3" class="desc"></div>
+                <div id="icon"><img id="eff_icon_3"></div>
+            </div>
+            <div class="container">
+                <span><img id="axie_skill_4"></span>
+                <div id="energy_4" class="energy"></div>
+                <div id="name_4" class="name"></div>
+                <div id="desc_4" class="desc"></div>
+                <div id="icon"><img id="eff_icon_4"></div>
+            </div>
+        </div>
     </div>
-    <div id="stats" class="stats">
-        <label>Stats: hp, speed, skill, and morale</label>
-        <div class="stat">
-            <div id="hp" class="hp score"></div>
-        </div>
-        <div class="stat">
-            <div id="speed" class="speed score"></div>
-        </div>
-        <div class="stat">
-            <div id="skill" class="skill score"></div>
-        </div>
-        <div class="stat">
-            <div id="morale" class="morale score"></div>
-        </div>
-    </div>
-    <table>
-        <td>
-            <div>
-                <p id="axie_skill_1"></p>
-            </div>
-        </td>
-        <td>
-            <div>
-                <p id="axie_skill_2"></p>
-            </div>
-        </td>
-        <td>
-            <div>
-                <p id="axie_skill_3"></p>
-            </div>
-        </td>
-        <td>
-            <div>
-                <p id="axie_skill_4"></p>
-            </div>
-        </td>
-    </table>
-    <pre id="axie_details"></pre>
 </body>
 
 </html>

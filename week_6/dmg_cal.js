@@ -37,6 +37,7 @@ const getAxieById = () => {
 	fetch(URL)
 		.then((res) => res.json())
 		.then((data) => {
+			console.log(data);
 			let cards = new Array();
 			const skill = {
 				cards: {},
@@ -51,9 +52,9 @@ const getAxieById = () => {
 			};
 			for (let i = 0; i < data.parts.length; i++) {
 				if (!(data.parts[i].abilities[0] === undefined)) {
-					skill.cards[data.parts[i].abilities[0].name] =
-						data.parts[i].abilities[0];
-					cards.push(data.parts[i].abilities[0].name);
+					let id = data.parts[i].abilities[0].id;
+					skill.cards[id] = data.parts[i].abilities[0];
+					cards.push(id);
 				}
 			}
 			axie.details.id = AXIE_ID;
@@ -61,21 +62,78 @@ const getAxieById = () => {
 			axie.details.class = data.class;
 			axie.cards = skill.cards;
 			delete axie.details.stats.__typename;
-			for (const name in axie.cards) {
-				delete axie.cards[name].backgroundUrl;
-				delete axie.cards[name].effectIconUrl;
-				delete axie.cards[name].__typename;
-				delete axie.cards[name].name;
+			for (const id in axie.cards) {
+				delete axie.cards[id].__typename;
+				delete axie.cards[id].id;
 			}
 			document.getElementById("stats").style.display = "block";
 			for (const stat in axie.details.stats) {
-				document.getElementById(stat).style.width = `${axie.details.stats[stat] * 5}px`;
-				document.getElementById(stat).innerHTML = axie.details.stats[stat];
+				let score = document.getElementById(stat);
+				score.style.width = `${axie.details.stats[stat] * 5}px`;
+				score.innerHTML = axie.details.stats[stat];
 			}
-			// for (let i = 1; i <= Object.keys(axie.cards).length; i++) {
-			// 	let skill = document.getElementById(`axie_skill_${i}`);
-			// 	skill.innerHTML = i;
-			// }
+
+			let bg_url = new Array(4);
+			let ef_url = new Array(4);
+			let desc = new Array(4);
+			let energy = new Array(4);
+			let card_name = new Array(4);
+
+			for (let i = 0; i < Object.keys(axie.cards).length; i++) {
+				if (cards[i].includes("mouth")) {
+					const index = 0;
+					bg_url[index] = axie.cards[cards[i]].backgroundUrl;
+					ef_url[index] = axie.cards[cards[i]].effectIconUrl;
+					desc[index] = axie.cards[cards[i]].description;
+					energy[index] = axie.cards[cards[i]].energy;
+					card_name[index] = axie.cards[cards[i]].name;
+				}
+				if (cards[i].includes("horn")) {
+					const index = 1;
+					bg_url[index] = axie.cards[cards[i]].backgroundUrl;
+					ef_url[index] = axie.cards[cards[i]].effectIconUrl;
+					desc[index] = axie.cards[cards[i]].description;
+					energy[index] = axie.cards[cards[i]].energy;
+					card_name[index] = axie.cards[cards[i]].name;
+				}
+				if (cards[i].includes("back")) {
+					const index = 2;
+					bg_url[index] = axie.cards[cards[i]].backgroundUrl;
+					ef_url[index] = axie.cards[cards[i]].effectIconUrl;
+					desc[index] = axie.cards[cards[i]].description;
+					energy[index] = axie.cards[cards[i]].energy;
+					card_name[index] = axie.cards[cards[i]].name;
+				}
+				if (cards[i].includes("tail")) {
+					const index = 3;
+					bg_url[index] = axie.cards[cards[i]].backgroundUrl;
+					ef_url[index] = axie.cards[cards[i]].effectIconUrl;
+					desc[index] = axie.cards[cards[i]].description;
+					energy[index] = axie.cards[cards[i]].energy;
+					card_name[index] = axie.cards[cards[i]].name;
+				}
+			}
+
+			if (AXIE_ID >= 5) {
+				document.getElementById("skills").style.display = "grid";
+			} else {
+				document.getElementById("skills").style.display = "none";
+			}
+			for (let i = 1; i <= Object.keys(axie.cards).length; i++) {
+				let bg = document.getElementById(`axie_skill_${i}`);
+				let icon = document.getElementById(`eff_icon_${i}`);
+				let desc_skill = document.getElementById(`desc_${i}`);
+				let en = document.getElementById(`energy_${i}`);
+				let name = document.getElementById(`name_${i}`);
+				bg.src = bg_url[i - 1];
+				icon.src = ef_url[i - 1];
+				desc_skill.innerHTML = desc[i - 1];
+				en.innerHTML = energy[i - 1];
+				name.innerHTML = card_name[i - 1];
+			}
 			console.log(axie);
+		})
+		.catch((error) => {
+			console.error(error);
 		});
 };

@@ -64,53 +64,10 @@ div.searchbar > .button:hover {
 	background-color: rgba(0, 160, 144);
 }
 
+/* axie image */
 div.center > img {
-    display: block;
-    margin-left: auto;
-	margin-right: auto;
-	width: 40%;
-}
-
-div.stats {
-	display: none;
+	display: block;
 	margin-left: auto;
 	margin-right: auto;
-	width: 305px;
-}
-
-div.stats div.stat {
-	margin: 5px 0px 5px 0px;
-	border-radius: 2px;
-	background-color: rgb(180, 180, 180);
-}
-
-div.stats div.stat > div {
-	height: 14px;
-	border-radius: 2px;
-	box-sizing: border-box;
-	border-right: 2px solid #fff;
-}
-
-.score {
-    font-weight: 700;
-    font-size: 10px;
-	text-align: right;
-	padding-right: 5px;
-    color: white;
-}
-
-div.stats div.stat div.hp {
-	background-color: #3ac279;
-}
-
-div.stats div.stat div.speed {
-	background-color: #f7ac0a;
-}
-
-div.stats div.stat div.skill {
-	background-color: #6a3ac2;
-}
-
-div.stats div.stat div.morale {
-	background-color: #c23a3a;
+	width: 80%;
 }
