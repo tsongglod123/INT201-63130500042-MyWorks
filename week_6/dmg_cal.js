@@ -1,4 +1,20 @@
-// (attack * skill) / 500
+// เล่น 2 ใบขึ้นไป + การ์ดตรงธาตุ + แพ้ธาตุ
+// {[atk + (atk * 0.1)] * 0.15} + (atk * skill)/500
+// เล่น 2 ใบขึ้นไป + การ์ดตรงธาตุ + ไม่แพ้ธาตุ
+// [atk + (atk * 0.1)] + (atk * skill)/500
+// เล่น 2 ใบขึ้นไป + การ์ดไม่ตรงธาตุ + แพ้ธาตุ
+// [atk + (atk * 0.15)] + (atk * skill)/500
+// เล่น 2 ใบขึ้นไป + การ์ดไม่ตรงธาตุ + ไม่แพ้ธาตุ
+// atk + (atk * skill)/500
+
+// เล่น 1 ใบ + การ์ดตรงธาตุ + แพ้ธาตุ
+// [atk + (atk * 0.1)] * 0.15
+// เล่น 1 ใบ + การ์ดตรงธาตุ + ไม่แพ้ธาตุ
+// atk + (atk * 0.1)
+// เล่น 1 ใบ + การ์ดไม่ตรงธาตุ + แพ้ธาตุ
+// atk + (atk * 0.15)
+// เล่น 1 ใบ + การ์ดไม่ตรงธาตุ + ไม่แพ้ธาตุ
+// atk
 
 // Any attacks that have the same attacking card class as the body class will get a 10% bonus.
 // For example Imp (110 base damage) on a beast will do 121 damage.

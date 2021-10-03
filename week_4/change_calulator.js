@@ -1,9 +1,9 @@
 const changeCalculation = (totalPrice, fromCustomer) => {
-    const banknotes = new Object; // empty obj for storing the amount of each banknote
+    const banknotes = {}; // empty obj for storing the amount of each banknote
     let change = {
-        "totalPrice": totalPrice,
-        "customerPay": fromCustomer,
-        "getChange": fromCustomer - totalPrice
+        totalPrice: totalPrice,
+        customerPay: fromCustomer,
+        getChange: fromCustomer - totalPrice
     }; // for displaying the customer's total change with the amount of each banknote
 
     if (change.getChange < 0) {
