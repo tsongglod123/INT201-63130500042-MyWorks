@@ -6,7 +6,7 @@ const reverseText = (text) => {
     return temp.join("");
 }
 
-let text = "Hello, World!"
+let text = "SHIJkljasdAIUPIOmkdv";
 const getText = () => {
     document.getElementById("text").innerHTML = text;
 }
@@ -20,9 +20,9 @@ const textString = (option) => {
         case 1:
             return reverseText(text);
         case 2:
-            return text.replace(/[aeiou]/gi, "*");
+            return text.replace(/[aeiouAEIOU]/gi, "*");
         case 3:
-            return text.match(/[aeiou]/gi).length;
+            return text.match(/[aeiouAEIOU]/gi).length;
         default:
             return "ERROR!";
     }
