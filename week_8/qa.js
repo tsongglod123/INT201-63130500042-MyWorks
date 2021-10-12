@@ -1,10 +1,6 @@
 class Player {
-	constructor(name) {
-		if (name === undefined || name === null) {
-			this._name = "GUEST";
-		} else {
-			this._name = name;
-		}
+	constructor(name = "GUEST") {
+		this._name = name;
 		this._score = 0;
 		this._answers = {};
 	}

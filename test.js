@@ -1,45 +1,46 @@
-// // 1.
-// function helloSomeone(name) {
-// 	return `Hello, ${name}`;
-// }
+const numbers = [2, 6, 8, 1, 9, 12, 5, 4, 6, 5, 0, -5, -9];
 
-// // 2.
-// function area(width, height) {
-// 	return width * height;
-// }
-
-// // 3.
-// function evenNum(num) {
-// 	if (num % 2 === 0) return true;
-// 	else return false;
-// }
-
-// convert to arrow function
-
-const helloSomeone = (name) => `Hello, ${name}`;
-
-const area = (w, h) => w * h;
-
-const evenNum = (num) => ((num % 2) === 0);
-
-console.log(helloSomeone("test"));
-console.log(area(2, 3));
-console.log(evenNum(654655));
-
-function test(...values) {
-    let result = "";
-    if (arguments.length >= 1) {
-        for (let i = 0; i < arguments.length; i++) {
-            if (i == (arguments.length - 1)) {
-                result += arguments[i];
-            } else {
-                result += arguments[i] + "/";
-            }
-        }
-        return result;
-    } else {
-        return -1;
-    }
+function divideArray(arr) {
+	if (arr === null || arr === undefined) {
+		return -1;
+	}
+	if (arr.length <= 1) {
+		return arr;
+	} else {
+		let result = [];
+		let temp = arr.splice(Math.trunc(arr.length / 2));
+		result.push(...temp);
+		function sum() {
+			let output = [];
+			output.push(arr.reduce((total, value) => total + value));
+			output.push(result.reduce((total, value) => total + value));
+			return {
+				divide: [arr, result],
+				sum: output,
+			};
+		}
+		return sum();
+	}
 }
 
-console.log(test('asd','asdasd','dddd'));
+function sumDivideArray(arr, fn) {
+	return fn(arr);
+}
+
+console.log(numbers);
+console.log(sumDivideArray(numbers, divideArray));
+
+function sum(x, y) {
+	return x + y;
+}
+
+function getScore(mid, final) {
+	function yourScore(fn) {
+		return fn(mid, final);
+	}
+	return yourScore;
+}
+
+let score = getScore(9, 9);
+console.log(score(sum));
+
